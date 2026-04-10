@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Загальна Статистика</title>
+    <link rel="icon" type="image/png" href="images/logoYPM.svg">
+    <link rel="stylesheet" href="css/mainpage.css">
+    <link rel="stylesheet" href="css/Modal/modalProfile.css">
+</head>
+<body>
+<header class="header">
+   <div class="header-left">
+        <div class="logo">
+          <img src="images/logoYPM.svg" alt="YuPeMo">
+          <h4><span style="-webkit-text-stroke: 1px #4A4D45; color: #E6FFBE;">YuPeMo</span></h4>
+        </div>
+        <nav class="menu">
+           <button onclick="window.location.href='mainservicepage.html';" class="mainservicepage"><b>Загальна Статиска</b></button> 
+           <button onclick="window.location.href='dohod.html';" class="plusmoney"><b>Доходи</b></button> 
+           <button onclick="window.location.href='vitraty.html';" class="minusmoney"><b>Витрати</b></button>
+           <button onclick="window.location.href='cili.html';" class="goal"><b>Цілі</b></button>
+        </nav>
+    </div>
+
+    <div class="header-right">
+       <div class="user">
+           <span id="openProfile" onclick="openModal()" >Ім’я_користувача</span>
+           <img id="openProfile" onclick="openModal()" src="images/user.svg" alt="user">
+       </div>
+    </div>
+</header>
+
+<dialog id="profileModal" class="Modal"> 
+   <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Профіль</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="form-row">
+
+      </div>
+
+      <div class="form-row">
+
+      </div>
+
+      <div class="form-row">
+
+      </div>
+
+      <div class="form-row">
+
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button onclick="closeModal()" id="closeModal" class="closeMod">Назад</button>
+        <button id="Profile" class="profileMod" onclick="window.location.href='index.html';">Вийти</button>
+    </div>
+
+   </div>
+    
+</dialog>
+
+<main>
+
+<section class="hero">
+
+    <h1>Тримайте фінанси під контролем</h1>
+
+    <p>
+        Разом з YuPeMo відстежувай витрати, плануй
+        власний бюджет і досягай фінансових цілей!
+    </p>
+
+</section>
+
+
+<section class="about-finance">
+
+    <h1>Чому важливо дбати про фінанси?</h1>
+
+    <div class="finance-content">
+        <div class="finance-image">
+            <img src="images/finance.jpg" alt="finance">
+        </div>
+
+        <div class="finance-text">
+
+             <p>
+                Фінанси — це система економічних відносин, пов’язана з формуванням, розподілом і 
+                використанням грошових коштів державою, підприємствами та громадянами.
+                Це не просто гроші чи готівка, а цілий процес управління фінансовими ресурсами, 
+                який забезпечує стабільність і розвиток економіки.               
+            </p>
+            <p>
+                Фінанси охоплюють різні аспекти повсякденного життя: від особистого бюджету до 
+                глобальних економічних процесів. Вони включають планування доходів і витрат, контроль 
+                за грошовими потоками, накопичення заощаджень та інвестування коштів для майбутнього.
+            </p>
+            <p>
+                Крім того, фінанси відіграють ключову роль у функціонуванні бізнесу та держави. 
+                Вони забезпечують інвестиції, розвиток інфраструктури, соціальні виплати, страхування 
+                ризиків і підтримку економічного зростання.
+            </p>
+                
+            <p>
+                У сучасному світі управління фінансами стає ще простішим завдяки цифровим технологіям. 
+                Онлайн-сервіси та веб-додатки дозволяють автоматизувати облік доходів і витрат, аналізувати 
+                фінансові звички та приймати більш обґрунтовані рішення.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ability-service">
+
+    <h1>Можливості YuPeMo</h1>
+    <div class="ability-content">
+        <div class="ability-image">
+            <img src="images/ability.jpg" alt="ability">
+        </div>
+
+        <div class="ability-text">
+
+            <p>1.Відстеження витрат — записуйте всі витрати та контролюйте бюджет;</p>
+            <p>2.Аналіз доходів — дивіться статистику доходів і витрат;</p>
+            <p>3.Фінансові цілі — накопичуйте на важливі покупки;</p>
+            <p>4.Нагадування про платежі — не пропускайте важливі платежі.</p>
+        </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <h1>Про нас</h1>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>Контакти:</h3>
+            <p>Email: YPMo@gmail.com</p>
+            <P>Phone: +380424234522</P>
+            <P>Phone: +330424234522</P>
+            <P>Phone: +730424234522</P>
+            <P>Phone: +780424234522</P>
+        </div>
+
+        <div>
+            <h3>Навігація:</h3>
+            <p>Головна</p>
+            <P>Доходи</P>
+            <P>Витрати</P>
+            <P>Цілі</P>
+        </div>
+
+        <div>
+            <h3>Соціальні мережі:</h3>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">TikTok</a></p>
+            <p><a href="#">Youtube</a></p>
+            <p><a href="#">X (Twitter)</a></p>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+  function openModal() {
+    document.getElementById('profileModal').style.display = 'block';
+  }
+  function closeModal()  {
+    document.getElementById('profileModal').style.display = 'none';
+  }
+</script> 
+</body>
+</html>

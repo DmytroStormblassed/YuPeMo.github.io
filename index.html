@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>YuPeMo</title>
+    <link rel="icon" type="image/png" href="images/logoYPM.svg">
+    <link rel="stylesheet" href="css/prepage.css">
+    <link rel="stylesheet" href="css/Modal/modalReg.css">
+    <link rel="stylesheet" href="css/Modal/modalLog.css">
+</head>
+
+<body>
+
+<header class="header">
+   <div class="header-left">
+    <div class="logo">
+        <img src="images/logoYPM.svg" alt="YuPeMo">
+        <h4><span style="-webkit-text-stroke: 1px #4A4D45; color: #E6FFBE;">YuPeMo</span></h4>
+    </div>
+   </div>
+   <div class="header-right">
+    <nav class="auth">
+        <button id="openLogin" class="login"><span style="-webkit-text-stroke: 1px #7BAF28; color: white;">Вхід</span></button>
+        <button id="openRegister" class="register"><span style="-webkit-text-stroke: 1px #7BAF28; color: white;">Реєстрація</span></button>
+    </nav>
+   </div>
+
+</header>
+
+<dialog id="LoginModal" class="Modal"> 
+   <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Вхід</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="form-row">
+        <label for="email">Пошта:</label>
+        <input type="email" id="email" placeholder="Введіть пошту">
+      </div>
+      <p style="text-align: center;">або</p>
+      <div class="form-row">
+        <label for="username">Ім'я:</label>
+        <input type="text" id="username" placeholder="Введіть ім'я">
+      </div>
+
+      <div class="form-row">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" placeholder="Введіть пароль">
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button id="Login" class="loginMod" onclick="window.location.href='mainpage.html';">Увійти</button>
+        <button id="closeModal1" class="closeMod">Скасувати</button>
+        <h4>Немає акаунта?</h4>
+        <button onclick="openRegister()" class="regMod">Зареєструватися</button>
+    </div>
+
+   </div>
+    
+</dialog>
+
+<dialog id="RegisterModal" class="Modal"> 
+   <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Реєстрація</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="form-row">
+        <label for="email">Пошта:</label>
+        <input type="email" id="email" placeholder="Введіть пошту">
+      </div>
+
+      <div class="form-row">
+        <label for="username">Ім'я:</label>
+        <input type="text" id="username" placeholder="Введіть ім'я">
+      </div>
+
+      <div class="form-row">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" placeholder="Введіть пароль">
+      </div>
+
+      <div class="form-row">
+        <label for="password2">Підтвердження:</label>
+        <input type="password" id="cinfirmpassword" placeholder="Повторіть пароль">
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button id="Register" class="registerMod" onclick="window.location.href='mainpage.html';">Зареєструватися</button>
+        <button id="closeModal" class="closeMod">Скасувати</button>
+    </div>
+
+   </div>
+    
+</dialog>
+
+<main>
+
+<section class="hero">
+
+    <h1>Тримайте фінанси під контролем</h1>
+
+    <p>
+        Разом з YuPeMo відстежувай витрати, плануй
+        власний бюджет і досягай фінансових цілей!
+    </p>
+
+</section>
+
+
+<section class="about-finance">
+
+    <h1>Чому важливо дбати про фінанси?</h1>
+
+    <div class="finance-content">
+        <div class="finance-image">
+            <img src="images/finance.jpg" alt="finance">
+        </div>
+
+        <div class="finance-text">
+
+            <p>
+                Фінанси — це система економічних відносин, пов’язана з формуванням, розподілом і 
+                використанням грошових коштів державою, підприємствами та громадянами.
+                Це не просто гроші чи готівка, а цілий процес управління фінансовими ресурсами, 
+                який забезпечує стабільність і розвиток економіки.               
+            </p>
+            <p>
+                Фінанси охоплюють різні аспекти повсякденного життя: від особистого бюджету до 
+                глобальних економічних процесів. Вони включають планування доходів і витрат, контроль 
+                за грошовими потоками, накопичення заощаджень та інвестування коштів для майбутнього.
+            </p>
+            <p>
+                Крім того, фінанси відіграють ключову роль у функціонуванні бізнесу та держави. 
+                Вони забезпечують інвестиції, розвиток інфраструктури, соціальні виплати, страхування 
+                ризиків і підтримку економічного зростання.
+            </p>
+                
+            <p>
+                У сучасному світі управління фінансами стає ще простішим завдяки цифровим технологіям. 
+                Онлайн-сервіси та веб-додатки дозволяють автоматизувати облік доходів і витрат, аналізувати 
+                фінансові звички та приймати більш обґрунтовані рішення.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section class="ability-service">
+
+    <h1>Можливості YuPeMo</h1>
+    <div class="ability-content">
+        <div class="ability-image">
+            <img src="images/ability.jpg" alt="ability">
+        </div>
+
+        <div class="ability-text">
+
+            <p>1.Відстеження витрат — записуйте всі витрати та контролюйте бюджет;</p>
+            <p>2.Аналіз доходів — дивіться статистику доходів і витрат;</p>
+            <p>3.Фінансові цілі — накопичуйте на важливі покупки;</p>
+            <p>4.Нагадування про платежі — не пропускайте важливі платежі.</p>
+        </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <h1>Про нас</h1>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>Контакти:</h3>
+            <p>Email: YPMo@gmail.com</p>
+            <P>Phone: +380424234522</P>
+            <P>Phone: +330424234522</P>
+            <P>Phone: +730424234522</P>
+            <P>Phone: +780424234522</P>
+        </div>
+
+        <div>
+            <h3>Часті Питання:</h3>
+            <p>Чи в безпеці мої фінансові дані?</p>
+            <p>Чи можна користуватися сервісом безкоштовно?</p>
+            <p>Чи доступний сервіс на мобільних пристроях?</p>
+            <p>Що робити, якщо я забув пароль?</p>
+            <p>Чи обов'язково потрібно підключати банківську карту?</p>
+            <p>Чи працює сервіс офлайн?</p>
+        </div>
+
+        <div>
+            <h3>Соціальні мережі:</h3>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">TikTok</a></p>
+            <p><a href="#">Youtube</a></p>
+            <p><a href="#">X (Twitter)</a></p>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+const modal = document.getElementById("RegisterModal");
+const openBtn = document.getElementById("openRegister");
+const closeBtn = document.getElementById("closeModal");
+
+
+openBtn.addEventListener("click", () => {
+    modal.showModal(); 
+});
+
+
+closeBtn.addEventListener("click", () => {
+    modal.close();
+});
+</script>
+<script>
+const modal1 = document.getElementById("LoginModal");
+const openBtn1 = document.getElementById("openLogin");
+const closeBtn1 = document.getElementById("closeModal1");
+
+
+openBtn1.addEventListener("click", () => {
+    modal1.showModal(); 
+});
+
+
+closeBtn1.addEventListener("click", () => {
+    modal1.close();
+});
+function openRegister() {
+    const loginModal = document.getElementById("LoginModal");
+    const registerModal = document.getElementById("RegisterModal");
+
+    loginModal.close();      
+    registerModal.showModal(); 
+}
+</script>
+
+
+</body>
+</html>

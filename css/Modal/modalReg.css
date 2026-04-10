@@ -1,0 +1,94 @@
+/* ModalRegister */
+
+.form-row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form-row label{
+  width: 180px;
+  font-weight: bold;
+}
+
+.form-row input{
+  flex: 1;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.Modal{
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    background: #e9e9e9;
+    font-family: 'Times New Roman', serif;
+}
+
+.Modal::backdrop{
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    padding: 30px 40px;
+    width: 420px;
+    font-family: Arial, sans-serif;
+}
+
+.modal-header{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-header h2{
+    margin: 0;
+    font-weight: bold;
+}
+
+.form-row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label{
+    width: 160px;
+    font-size: 14px;
+}
+
+.form-row input{
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background: #d9d9d9;
+}
+
+.modal-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.modal-footer button:hover{
+    opacity: 0.8;
+}
+
+.registerMod{
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+}
+
+.closeMod{
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background: #e3b89c;
+    cursor: pointer;
+}
+
