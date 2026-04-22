@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Цілі</title>
+    <link rel="icon" type="image/png" href="images/logoYPM.svg">
+    <link rel="stylesheet" href="css/cilipage.css">
+    <link rel="stylesheet" href="css/Modal/modalProfile.css">
+</head>
+<body>
+<header class="header">
+   <div class="header-left">
+        <div class="logo">
+          <img src="images/logoYPM.svg" alt="YuPeMo">
+          <h4><span style="-webkit-text-stroke: 1px #4A4D45; color: #E6FFBE;">YuPeMo</span></h4>
+        </div>
+        <nav class="menu">
+           <button onclick="window.location.href='mainpage.html';" class="mainpage"><b>Головня Сторінка</b></button> 
+           <button onclick="window.location.href='mainservicepage.html';" class="mainservicepage"><b>Загальна Статиска</b></button> 
+           <button onclick="window.location.href='dohod.html';" class="plusmoney"><b>Доходи</b></button>
+           <button onclick="window.location.href='vitraty.html';" class="minusmoney"><b>Витрати</b></button>
+        </nav>
+    </div>
+
+    <div class="header-right">
+       <div class="user">
+           <span id="openProfile" onclick="openModal()" >Ім’я_користувача</span>
+           <img id="openProfile" onclick="openModal()" src="images/user.svg" alt="user">
+       </div>
+    </div>
+</header>
+
+<dialog id="profileModal" class="Modal"> 
+   <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Профіль</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="profile-settings">
+        <button class="userprofile">Параметри</button>
+        <button class="userprofile">Синхронізація з банком</button>
+        <button class="userprofile">Покупки</button>
+        <button class="userprofile">Борги</button>
+        <button onclick="closeModal()" id="closeModal" class="closeMod">Назад</button>
+        <button id="Profile" class="profileMod" onclick="window.location.href='index.html';">Вийти</button>
+      </div>
+
+    <div class="settings-panel">
+
+    </div>
+   </div>
+    
+</dialog>
+
+<main class="container">
+  <section class="left">
+     <div class="filter-panel">
+
+        <h3>ФІЛЬТР</h3>
+
+        <label class="filter-item">
+            <input type="radio" name="chartType" value="date">
+            Дата
+        </label>
+
+        <label class="filter-item">
+            <input type="radio" name="chartType" value="progress">
+            Прогрес(%)
+        </label>
+
+        <label class="filter-item">
+            <input type="radio" name="chartType" value="sumDesc">
+            Сума (з більшого до меншого)
+        </label>
+
+        <label class="filter-item">
+            <input type="radio" name="chartType" value="sumAsc">
+            Сума (з меншого до більшого)
+        </label>
+
+        <div class="buttons">
+            <button class="confirm" id="confirmFilter">Підтвердити</button>
+            <button class="cancel">Скасувати</button>
+        </div>
+
+    </div>
+  </section>
+  <div class="main">
+    <div class="myGoal">
+        <h3>ЦІЛЬ</h3>
+        <div class="progress">
+             <p>0%</p>
+        </div>
+    </div>
+
+    <table id="goalTable">
+        <caption>ВАШІ ЦІЛІ</caption>
+        <thead>  
+            <tr>
+              <th class="nonexist"></th>
+              <th>Назва</th>
+              <th>Дата</th>
+              <th>Сума $</th>
+              <th>Зібрано $</th>
+              <th>Прогрес(%)</th>
+            </tr>          
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+  </div>
+  <section class="right">
+    <div class="goal-panel">
+
+        <h3>ДОДАТИ ЦІЛЬ</h3>
+
+
+        <div class="goal-item">
+            <label for="namegoal">Назва:</label>
+            <input type="text" id="namegoal" placeholder="Введіть назву">
+        </div>
+
+        <div class="goal-item">
+            <label for="sumgoal">Сума:</label>
+            <input type="text" id="sumgoal" placeholder="Введіть суму $">
+        </div>
+
+
+        <div class="buttons">
+            <button class="confirm" id="confirmGoal">Підтвердити</button>
+            <button class="cancel" id="cancelGoal">Скасувати</button>
+        </div>
+
+    </div>
+  </section>
+</main>
+
+<script>
+  function openModal() {
+    document.getElementById('profileModal').style.display = 'block';
+  }
+  function closeModal()  {
+    document.getElementById('profileModal').style.display = 'none';
+  }
+</script> 
+
+<script>
+  const rows = document.querySelectorAll("table tr");
+
+  rows.forEach(row => {
+    const cells = row.querySelectorAll("td");
+
+    if (cells.length > 0) {
+      const progressCell = cells[3]; 
+      const value = parseInt(progressCell.textContent);
+
+      if (value >= 100) {
+        progressCell.classList.add("green");
+      }
+      else{
+        progressCell.classList.add("red");
+      }
+    }
+  });
+</script>
+<script src="js/addGoal.js"></script>
+</body>
+</html>
