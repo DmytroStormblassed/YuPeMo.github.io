@@ -1,0 +1,53 @@
+/* ModalFilter */
+.Modal {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    background: #e9e9e9;
+    font-family: 'Times New Roman', serif;
+}
+
+.Modal[open] {
+    animation: appear 0.3s;
+}
+
+@keyframes appear{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes disappear{
+    from {
+        opacity: 1;
+        display: block;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.Modal::backdrop{
+    background: rgba(0,0,0,0.5);
+}
+.right.button{
+    gap: 10px;
+    margin-right: 5px;
+}
+.confirm{
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+}
+.cancel{
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background: #e3b89c;
+    cursor: pointer;
+}
