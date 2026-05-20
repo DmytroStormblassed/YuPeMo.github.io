@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Доходи</title>
+    <link rel="icon" type="image/png" href="images/logoYPM.svg">
+    <link rel="stylesheet" href="css/dohodpage.css">
+    <link rel="stylesheet" href="css/Modal/modalProfile.css">
+    <link rel="stylesheet" href="css/Modal/modalFilter.css">
+    <link rel="stylesheet" href="css/Modal/modalType.css">
+    <link rel="stylesheet" href="css/Modal/modalTransactionFilter.css">
+</head>
+<body>
+<header class="header">
+   <div class="header-left">
+        <div class="logo">
+          <img src="images/logoYPM.svg" alt="YuPeMo">
+          <h4><span style="-webkit-text-stroke: 1px #4A4D45; color: #E6FFBE;">YuPeMo</span></h4>
+        </div>
+        <nav class="menu">
+            <button onclick="window.location.href='mainpage.html';" class="mainpage"><b>Головня Сторінка</b></button> 
+           <button onclick="window.location.href='mainservicepage.html';" class="mainservicepage"><b>Загальна Статиска</b></button> 
+           <button onclick="window.location.href='vitraty.html';" class="minusmoney"><b>Витрати</b></button>
+           <button onclick="window.location.href='cili.html';" class="goal"><b>Цілі</b></button>
+        </nav>
+    </div>
+
+    <div class="header-right">
+       <div class="user">
+           <span id="openProfile" onclick="openModal()" >Ім’я_користувача</span>
+           <img id="openProfile" onclick="openModal()" src="images/user.svg" alt="user">
+       </div>
+    </div>
+</header>
+
+<dialog id="profileModal" class="Modal"> 
+   <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Профіль</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="profile-settings">
+        <button class="userprofile">Параметри</button>
+        <button class="userprofile">Синхронізація з банком</button>
+        <button class="userprofile">Покупки</button>
+        <button class="userprofile">Борги</button>
+        <button onclick="closeModal()" id="closeModal" class="closeMod">Назад</button>
+        <button id="Profile" class="profileMod" onclick="window.location.href='index.html';">Вийти</button>
+      </div>
+
+    <div class="settings-panel">
+
+    </div>
+   </div>
+    
+</dialog>
+
+<dialog id="TypeModalDohod" class="Modal"> 
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Тип показника</h2>
+    </div>
+    <div class="modal-body">
+     <div class="left">
+       <label class="type-item">
+            <input type="radio" name="chartType">
+            Кільцева Діаграма
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Кругова Діаграма
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Гістограма 
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Точкова Діаграма
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Календарь
+        </label>
+     </div>
+
+
+
+     <div class="right">
+        <button id="agreeModalDohod" class="confirm">Підтвердити</button>
+        <button id="TypeCloseModalDohod" class="cancel">Скасувати</button>
+     </div>
+
+     
+    </div>
+</dialog>  
+
+<dialog id="FilterModalDohod" class="Modal"> 
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Фільтр</h2>
+    </div>
+    <div class="modal-body">
+     <div class="left">
+       <label class="type-item">
+            <input type="radio" name="chartFilter">
+            За день
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartFilter">
+            За 7 днів
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartFilter">
+            За місяць
+        </label>
+     </div>
+
+     <div class="right">
+        <button id="agreeModalDohod1" class="confirm">Підтвердити</button>
+        <button id="FilterCloseModalDohod" class="cancel">Скасувати</button>
+     </div>
+
+     
+    </div>
+</dialog> 
+
+<dialog id="TransactionDohodFilterModal" class="Modal transaction-filter-modal"> 
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Фільтр транзакцій</h2>
+    </div>
+
+    <div class="modal-body transaction-filter-body">
+
+      <div class="transaction-filter-left">
+
+        <div class="filter-group">
+          <h4>Період</h4>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="day">
+            За день
+          </label>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="week">
+            За 7 днів
+          </label>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="month">
+            За місяць
+          </label>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="all" checked>
+            За весь час
+          </label>
+        </div>
+
+      </div>
+
+      <div class="transaction-filter-right">
+        <button id="applyTransactionDohodFilter" class="confirm">Підтвердити</button>
+        <button id="closeTransactionDohodFilter" class="cancel">Скасувати</button>
+      </div>
+
+    </div>
+
+  </div>
+</dialog>
+
+<main class="container">
+
+    <section class="left">
+
+        <h3 class="balance">ДОХІД: n$</h3>
+
+
+
+            <div class="chart-header">
+                <div class="filters">
+                    <button class="type" id="openTypeDohod">v Тип</button>
+                    <button class="filterinfo" id="openFilterDohod">v Фільтр</button>
+                </div>
+            </div>
+
+            <div class="graph">
+              <img src="images/graph.jpg" alt="graph">
+            </div>
+
+    </section>
+
+    <section class="right">
+
+        <h3>ДОХОДИ</h3>
+
+        <div class="buttons">
+            <button class="filterinfo" id="openTransactionDohodFilter">v Фільтр</button>
+            <button class="addtrans">Додати дохід</button>
+        </div>
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Категорія</th>
+                    <th>Коментар</th>
+                    <th>Сума($)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<script>
+const modal = document.getElementById("TypeModalDohod");
+const openBtn = document.getElementById("openTypeDohod");
+const closeBtn = document.getElementById("TypeCloseModalDohod");
+const applyBtn = document.getElementById("agreeModalDohod")
+
+
+openBtn.addEventListener("click", () => {
+    modal.showModal(); 
+});
+
+
+closeBtn.addEventListener("click", () => {
+    modal.close();
+});
+
+applyBtn.addEventListener("click", () => {
+    modal.close();
+});
+</script> 
+
+<script>
+const modal1 = document.getElementById("FilterModalDohod");
+const openBtn1 = document.getElementById("openFilterDohod");
+const closeBtn1 = document.getElementById("FilterCloseModalDohod");
+const applyBtn1 = document.getElementById("agreeModalDohod1")
+
+
+openBtn1.addEventListener("click", () => {
+    modal1.showModal(); 
+});
+
+
+closeBtn1.addEventListener("click", () => {
+    modal1.close();
+});
+
+applyBtn1.addEventListener("click", () => {
+    modal1.close();
+});
+</script> 
+<script>
+const transactionFilterModal = document.getElementById("TransactionDohodFilterModal");
+const openTransactionFilterBtn = document.getElementById("openTransactionDohodFilter");
+const closeTransactionFilterBtn = document.getElementById("closeTransactionDohodFilter");
+const applyTransactionFilterBtn = document.getElementById("applyTransactionDohodFilter");
+
+openTransactionFilterBtn.addEventListener("click", () => {
+    transactionFilterModal.showModal();
+});
+
+closeTransactionFilterBtn.addEventListener("click", () => {
+    transactionFilterModal.close();
+});
+
+applyTransactionFilterBtn.addEventListener("click", () => {
+    transactionFilterModal.close();
+});
+</script>
+<script>
+  function openModal() {
+    document.getElementById('profileModal').style.display = 'block';
+  }
+  function closeModal()  {
+    document.getElementById('profileModal').style.display = 'none';
+  }
+</script> 
+</body>
+</html>

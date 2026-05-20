@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Витрати</title>
+    <link rel="icon" type="image/png" href="images/logoYPM.svg">
+    <link rel="stylesheet" href="css/vitratypage.css">
+    <link rel="stylesheet" href="css/Modal/modalProfile.css">
+    <link rel="stylesheet" href="css/Modal/modalFilter.css">
+    <link rel="stylesheet" href="css/Modal/modalType.css">
+    <link rel="stylesheet" href="css/Modal/modalTransactionFilter.css">
+</head>
+<body>
+<header class="header">
+   <div class="header-left">
+        <div class="logo">
+          <img src="images/logoYPM.svg" alt="YuPeMo">
+          <h4><span style="-webkit-text-stroke: 1px #4A4D45; color: #E6FFBE;">YuPeMo</span></h4>
+        </div>
+        <nav class="menu">
+           <button onclick="window.location.href='mainpage.html';" class="mainpage"><b>Головня Сторінка</b></button> 
+           <button onclick="window.location.href='mainservicepage.html';" class="mainservicepage"><b>Загальна Статиска</b></button> 
+           <button onclick="window.location.href='dohod.html';" class="plusmoney"><b>Доходи</b></button>
+           <button onclick="window.location.href='cili.html';" class="goal"><b>Цілі</b></button>
+        </nav>
+    </div>
+
+    <div class="header-right">
+       <div class="user">
+           <span id="openProfile" onclick="openModal()" >Ім’я_користувача</span>
+           <img id="openProfile" onclick="openModal()" src="images/user.svg" alt="user">
+       </div>
+    </div>
+</header>
+
+<dialog id="profileModal" class="Modal"> 
+   <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Профіль</h2>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="profile-settings">
+        <button class="userprofile">Параметри</button>
+        <button class="userprofile">Синхронізація з банком</button>
+        <button class="userprofile">Покупки</button>
+        <button class="userprofile">Борги</button>
+        <button onclick="closeModal()" id="closeModal" class="closeMod">Назад</button>
+        <button id="Profile" class="profileMod" onclick="window.location.href='index.html';">Вийти</button>
+      </div>
+
+    <div class="settings-panel">
+
+    </div>
+   </div>
+    
+</dialog>
+
+<dialog id="TypeModalVitraty" class="Modal"> 
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Тип показника</h2>
+    </div>
+    <div class="modal-body">
+     <div class="left">
+       <label class="type-item">
+            <input type="radio" name="chartType">
+            Кільцева Діаграма
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Кругова Діаграма
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Гістограма 
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Точкова Діаграма
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            Календарь
+        </label>
+     </div>
+
+
+
+     <div class="right">
+        <button id="agreeModalVitraty" class="confirm">Підтвердити</button>
+        <button id="TypeCloseModalVitraty" class="cancel">Скасувати</button>
+     </div>
+
+     
+    </div>
+</dialog>  
+
+<dialog id="FilterModalVitraty" class="Modal"> 
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Фільтр</h2>
+    </div>
+    <div class="modal-body">
+     <div class="left">
+       <label class="type-item">
+            <input type="radio" name="chartType">
+            За день
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            За 7 днів
+        </label>
+
+        <label class="type-item">
+            <input type="radio" name="chartType">
+            За місяць
+        </label>
+     </div>
+
+     <div class="right">
+        <button id="agreeModalVitraty1" class="confirm">Підтвердити</button>
+        <button id="FilterCloseModalVitraty" class="cancel">Скасувати</button>
+     </div>
+
+     
+    </div>
+</dialog> 
+<dialog id="TransactionVitratyFilterModal" class="Modal transaction-filter-modal"> 
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>Фільтр транзакцій</h2>
+    </div>
+
+    <div class="modal-body transaction-filter-body">
+
+      <div class="transaction-filter-left">
+
+        <div class="filter-group">
+          <h4>Період</h4>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="day">
+            За день
+          </label>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="week">
+            За 7 днів
+          </label>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="month">
+            За місяць
+          </label>
+
+          <label class="type-item">
+            <input type="radio" name="transactionPeriod" value="all" checked>
+            За весь час
+          </label>
+        </div>
+
+      </div>
+
+      <div class="transaction-filter-right">
+        <button id="applyTransactionVitratyFilter" class="confirm">Підтвердити</button>
+        <button id="closeTransactionVitratyFilter" class="cancel">Скасувати</button>
+      </div>
+
+    </div>
+
+  </div>
+</dialog>
+<main class="container">
+
+    <section class="left">
+
+        <h3 class="balance">ВИТРАТИ: n$</h3>
+
+
+
+            <div class="chart-header">
+                <div class="filters">
+                    <button class="type" id="openModalTypeVitraty">v Тип</button>
+                    <button class="filterinfo" id="openModalFilterVitraty">v Фільтр</button>
+                </div>
+            </div>
+
+            <div class="graph">
+              <img src="images/graph.jpg" alt="graph">
+            </div>
+
+    </section>
+
+    <section class="right">
+
+        <h3>ВИТРАТИ</h3>
+
+        <div class="buttons">
+            <button class="filterinfo" id="openTransactionVitratyFilter">v Фільтр</button>
+            <button class="addvitratu">Додати витрату</button>
+        </div>
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Категорія</th>
+                    <th>Тип</th>
+                    <th>Сума($)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<script>
+const modal = document.getElementById("TypeModalVitraty");
+const openBtn = document.getElementById("openModalTypeVitraty");
+const closeBtn = document.getElementById("TypeCloseModalVitraty");
+const applyBtn = document.getElementById("agreeModalVitraty")
+
+
+openBtn.addEventListener("click", () => {
+    modal.showModal(); 
+});
+
+
+closeBtn.addEventListener("click", () => {
+    modal.close();
+});
+
+applyBtn.addEventListener("click", () => {
+    modal.close();
+});
+</script> 
+
+<script>
+const modal1 = document.getElementById("FilterModalVitraty");
+const openBtn1 = document.getElementById("openModalFilterVitraty");
+const closeBtn1 = document.getElementById("FilterCloseModalVitraty");
+const applyBtn1 = document.getElementById("agreeModalVitraty1")
+
+
+openBtn1.addEventListener("click", () => {
+    modal1.showModal(); 
+});
+
+
+closeBtn1.addEventListener("click", () => {
+    modal1.close();
+});
+
+applyBtn1.addEventListener("click", () => {
+    modal1.close();
+});
+</script> 
+
+<script>
+  function openModal() {
+    document.getElementById('profileModal').style.display = 'block';
+  }
+  function closeModal()  {
+    document.getElementById('profileModal').style.display = 'none';
+  }
+</script> 
+<script>
+const transactionFilterModal = document.getElementById("TransactionVitratyFilterModal");
+const openTransactionFilterBtn = document.getElementById("openTransactionVitratyFilter");
+const closeTransactionFilterBtn = document.getElementById("closeTransactionVitratyFilter");
+const applyTransactionFilterBtn = document.getElementById("applyTransactionVitratyFilter");
+
+openTransactionFilterBtn.addEventListener("click", () => {
+    transactionFilterModal.showModal();
+});
+
+closeTransactionFilterBtn.addEventListener("click", () => {
+    transactionFilterModal.close();
+});
+
+applyTransactionFilterBtn.addEventListener("click", () => {
+    transactionFilterModal.close();
+});
+</script>
+</body>
+</html>
