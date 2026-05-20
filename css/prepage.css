@@ -1,0 +1,151 @@
+body{
+    margin:0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background:#ffffff;
+}
+
+/* HEADER */
+
+.header{
+    background:#E6FFBE;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px 20px;
+    font-family:'Times New Roman', serif;
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.auth a{
+    display: flex;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.auth button:hover{
+    opacity: 0.8;
+}
+
+.register{
+    background:white;
+    padding:5px 12px;
+    border-radius:10px;
+    font-size: 16px;
+    
+}
+
+.login{
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    margin-top:60px;
+}
+
+.hero h1{
+    font-size:36px;
+    font-family: 'Times New Roman', serif;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+    font-family: 'Times New Roman', serif;
+}
+
+/* FINANCE SECTION */
+
+.about-finance{
+    margin-top:80px;
+    text-align:center;
+    font-family: 'Times New Roman', serif;
+}
+
+.finance-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    margin-top:80px;
+}
+
+.finance-image img{
+    width:395px;
+    height: 225px;
+    border:1px solid black;
+}
+
+.finance-text{
+    width:400px;
+    text-align:left;
+    font-size:16px;
+}
+
+/* ABILITY SECTION */
+.ability-service{
+    margin-top:80px;
+    text-align:center;
+    font-family: 'Times New Roman', serif;
+}
+.ability-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    margin-top:80px;
+}
+
+.ability-image img{
+    width:395px;
+    height: 225px;
+    border:1px solid black;
+}
+
+.ability-text{
+    width:400px;
+    text-align:left;
+    font-size:16px; 
+}
+/* FOOTER */
+
+.footer{
+    width:100%;
+    text-align:center;
+    font-family: 'Times New Roman', serif;
+}
+
+.footer-content{
+    background-color: #E6FFBE;
+    justify-content:space-between;
+    display:flex;
+    justify-content:space-around;
+}
+

@@ -1,0 +1,200 @@
+body{
+    margin:0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background:#ffffff;
+}
+
+/* HEADER */
+
+.header{
+    background:#E6FFBE;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px 20px;
+    font-family:'Times New Roman', serif;
+}
+
+/* ЛІВА ЧАСТИНА */
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+}
+
+/* МЕНЮ */
+
+.menu{
+    display:flex;
+    gap:20px;
+
+}
+.mainpage{
+    color:black;
+    background:none;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+.mainservicepage{
+    color:black;
+    background:none;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+.plusmoney{
+    color:black;
+    background:none;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+.goal{
+    color:black;
+    background:none;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.menu button:hover{
+    opacity:0.8;
+}
+
+/* ПРАВА ЧАСТИНА */
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.user{
+    cursor:pointer
+}
+.avatar{
+    width:35px;
+}
+
+
+/* MAIN */
+
+.container{
+    display:flex;
+    justify-content:space-between;
+    padding:40px;
+}
+
+
+/* LEFT BLOCK */
+
+.left{
+    width:55%;
+}
+
+.balance{
+    margin-bottom:20px;
+}
+
+.chart-block{
+    border:1px solid black;
+    padding:10px;
+}
+
+.chart{
+    height:250px;
+    display:flex;
+    align-items:flex-end;
+    gap:20px;
+    padding:40px;
+}
+
+.type{
+    border-radius: 20px;
+    border: 1px solid black;
+    background:white;
+    cursor: pointer;
+}
+
+.filterinfo{
+    border-radius: 20px;
+    border: 1px solid black;
+    background:white;
+    cursor: pointer;
+}
+.bar{
+    width:60px;
+    background:gray;
+}
+
+.bar1{height:80px;}
+.bar2{height:120px;}
+.bar3{height:160px;}
+
+.legend{
+    display:flex;
+    gap:40px;
+    margin-top:20px;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.box{
+    width:20px;
+    height:20px;
+}
+
+.expense{
+    background:#d7a98c;
+}
+
+.income{
+    background:#a6d48c;
+}
+
+
+/* RIGHT BLOCK */
+
+.right{
+    width:35%;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table th,
+.table td{
+    border:1px solid black;
+    padding:5px;
+    text-align:center;
+}
+
+.addvitratu{
+    border-radius: 20px;
+    border: 1px solid black;
+    background:white;
+    cursor: pointer;
+}
