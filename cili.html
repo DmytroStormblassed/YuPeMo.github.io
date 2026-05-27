@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Цілі</title>
     <link rel="icon" type="image/png" href="images/logoYPM.svg">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/cilipage.css">
     <link rel="stylesheet" href="css/Modal/modalProfile.css">
 </head>
@@ -16,78 +17,59 @@
         </div>
         <nav class="menu">
            <button onclick="window.location.href='mainpage.html';" class="mainpage"><b>Головня Сторінка</b></button> 
-           <button onclick="window.location.href='mainservicepage.html';" class="mainservicepage"><b>Загальна Статиска</b></button> 
+           <button onclick="window.location.href='mainservicepage.html';" class="mainservicepage"><b>Загальна Статистика</b></button> 
            <button onclick="window.location.href='dohod.html';" class="plusmoney"><b>Доходи</b></button>
            <button onclick="window.location.href='vitraty.html';" class="minusmoney"><b>Витрати</b></button>
         </nav>
     </div>
-
     <div class="header-right">
-       <div class="user">
-           <span id="openProfile" onclick="openModal()" >Ім’я_користувача</span>
-           <img id="openProfile" onclick="openModal()" src="images/user.svg" alt="user">
+       <div class="user" onclick="openModal()">
+           <span id="openProfile">Ім'я_користувача</span>
+           <img src="images/user.svg" alt="user">
        </div>
     </div>
 </header>
 
 <dialog id="profileModal" class="Modal"> 
    <div class="modal-content">
-
-    <div class="modal-header">
-      <h2>Профіль</h2>
-    </div>
-
+    <div class="modal-header"><h2>Профіль</h2></div>
     <div class="modal-body">
-
       <div class="profile-settings">
         <button class="userprofile">Параметри</button>
         <button class="userprofile">Синхронізація з банком</button>
         <button class="userprofile">Покупки</button>
         <button class="userprofile">Борги</button>
-        <button onclick="closeModal()" id="closeModal" class="closeMod">Назад</button>
-        <button id="Profile" class="profileMod" onclick="window.location.href='index.html';">Вийти</button>
+        <button onclick="closeModal()" class="closeMod">Назад</button>
+        <button class="profileMod" onclick="window.location.href='index.html';">Вийти</button>
       </div>
-
-    <div class="settings-panel">
-
+      <div class="settings-panel"></div>
     </div>
    </div>
-    
 </dialog>
 
 <main class="container">
   <section class="left">
      <div class="filter-panel">
-
         <h3>ФІЛЬТР</h3>
-
         <label class="filter-item">
-            <input type="radio" name="chartType" value="date">
-            Дата
+            <input type="radio" name="chartType" value="date"> Дата
         </label>
-
         <label class="filter-item">
-            <input type="radio" name="chartType" value="progress">
-            Прогрес(%)
+            <input type="radio" name="chartType" value="progress"> Прогрес(%)
         </label>
-
         <label class="filter-item">
-            <input type="radio" name="chartType" value="sumDesc">
-            Сума (з більшого до меншого)
+            <input type="radio" name="chartType" value="sumDesc"> Сума (з більшого до меншого)
         </label>
-
         <label class="filter-item">
-            <input type="radio" name="chartType" value="sumAsc">
-            Сума (з меншого до більшого)
+            <input type="radio" name="chartType" value="sumAsc"> Сума (з меншого до більшого)
         </label>
-
         <div class="buttons">
             <button class="confirm" id="confirmFilter">Підтвердити</button>
             <button class="cancel">Скасувати</button>
         </div>
-
-    </div>
+     </div>
   </section>
+
   <div class="main">
     <div class="myGoal">
         <h3>ЦІЛЬ</h3>
@@ -108,65 +90,52 @@
               <th>Прогрес(%)</th>
             </tr>          
         </thead>
-        <tbody>
-
-        </tbody>
+        <tbody></tbody>
     </table>
   </div>
+
   <section class="right">
     <div class="goal-panel">
-
         <h3>ДОДАТИ ЦІЛЬ</h3>
-
-
         <div class="goal-item">
             <label for="namegoal">Назва:</label>
             <input type="text" id="namegoal" placeholder="Введіть назву">
         </div>
-
         <div class="goal-item">
             <label for="sumgoal">Сума:</label>
             <input type="text" id="sumgoal" placeholder="Введіть суму $">
         </div>
-
-
         <div class="buttons">
             <button class="confirm" id="confirmGoal">Підтвердити</button> 
             <button class="cancel" id="cancelGoal">Скасувати</button>
         </div>
-
     </div>
   </section>
 </main>
 
 <script>
-  function openModal() {
-    document.getElementById('profileModal').style.display = 'block';
-  }
-  function closeModal()  {
-    document.getElementById('profileModal').style.display = 'none';
-  }
+function openModal()  { document.getElementById('profileModal').showModal();}
+function closeModal() { document.getElementById('profileModal').close();}
 </script> 
 
 <script>
-  const rows = document.querySelectorAll("table tr");
-
-  rows.forEach(row => {
-    const cells = row.querySelectorAll("td");
-
-    if (cells.length > 0) {
-      const progressCell = cells[3]; 
-      const value = parseInt(progressCell.textContent);
-
-      if (value >= 100) {
-        progressCell.classList.add("green");
-      }
-      else{
-        progressCell.classList.add("red");
-      }
-    }
-  });
+function colorProgressCells() {
+    const rows = document.querySelectorAll("#goalTable tbody tr");
+    rows.forEach(row => {
+        const cells = row.querySelectorAll("td");
+        if (cells.length > 0) {
+            const progressCell = cells[cells.length - 1];
+            const value = parseInt(progressCell.textContent);
+            progressCell.classList.remove("green", "red");
+            if (value >= 100) progressCell.classList.add("green");
+            else progressCell.classList.add("red");
+        }
+    });
+}
+const observer = new MutationObserver(colorProgressCells);
+observer.observe(document.querySelector("#goalTable tbody"), { childList: true });
 </script>
 <script src="js/addGoal.js"></script>
+<script src="js/sortGoal.js"></script>
 </body>
 </html>
