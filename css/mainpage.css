@@ -1,0 +1,88 @@
+@import 'pagestyle.css';
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+    animation: fadeInUp 0.7s ease both;
+}
+.hero h1 {
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+.hero p {
+    font-size: 18px;
+    color: #555;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.65;
+    animation: fadeInUp 0.7s 0.15s ease both;
+}
+
+.about-finance,
+.ability-service {
+    margin-top: 80px;
+    text-align: center;
+    padding: 0 30px;
+}
+.about-finance h1,
+.ability-service h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.finance-content,
+.ability-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+.finance-image img,
+.ability-image img {
+    width: 395px;
+    height: 225px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.finance-image img:hover,
+.ability-image img:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+}
+
+.finance-text,
+.ability-text {
+    width: 400px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #444;
+}
+.ability-text p { margin-bottom: 12px; }
+
+/* FOOTER */
+.footer {
+    margin-top: 80px;
+    text-align: center;
+}
+.footer h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+.footer-content {
+    background: var(--green-light);
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-content p, .footer-content a { color: #444; text-decoration: none; }
+.footer-content a:hover { color: var(--green-dark); }

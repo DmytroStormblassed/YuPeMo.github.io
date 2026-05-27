@@ -1,0 +1,164 @@
+@import 'pagestyle.css';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 30px 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+    animation: fadeInUp 0.55s 0.1s ease both;
+}
+
+.myGoal {
+    text-align: center;
+    background: var(--grey-bg);
+    border-radius: var(--radius);
+    padding: 20px 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 360px;
+}
+.myGoal h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
+}
+
+.progress {
+    border: 1px solid #cde09a;
+    border-radius: 20px;
+    background: #fff;
+    width: 300px;
+    height: 35px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+.progress p {
+    margin: 0;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+.progress::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0%;
+    background: var(--green-mid);
+    border-radius: 20px;
+    transition: width 0.8s ease;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 480px;
+    font-family: 'Lato', serif;
+}
+caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+}
+th {
+    background: var(--green-light);
+    padding: 9px 10px;
+    border: 1px solid #cde09a;
+    font-size: 13px;
+}
+td {
+    border: 1px solid #e0e0e0;
+    padding: 9px 10px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+tbody tr:hover td { background: #f3ffe0; }
+tbody tr { animation: shimmerRow 0.4s ease both; }
+
+.green { background: #E6FFBE; color: #2a5900; font-weight: bold; }
+.red   { background: #f5d9ca; color: #7a2e00; font-weight: bold; }
+
+.left {
+    margin-top: 50px;
+    margin-left: 10px;
+    width: 260px;
+    animation: slideInLeft 0.5s ease both;
+}
+.filter-panel { border: 1px solid #ddd; padding: 14px; }
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.filter-item input {
+    width: 16px; height: 16px; cursor: pointer;
+}
+.filter-item:hover { color: var(--green-dark); }
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.right {
+    margin-top: 50px;
+    margin-right: 10px;
+    width: 260px;
+    animation: slideInRight 0.5s ease both;
+}
+.goal-panel { border: 1px solid #ddd; padding: 14px; }
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.goal-item label { width: 100px; font-size: 14px; }
+.goal-item input {
+    flex: 1;
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-family: 'Lato', serif;
+    transition: border-color 0.2s;
+}
+.goal-item input:focus {
+    outline: none;
+    border-color: var(--green-dark);
+}
+
+.deleteTable {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.2s;
+}
+.deleteTable:hover { transform: scale(1.15); }
+
+.nonexist, #goalTable tr td:first-child, #goalTable tr th:first-child {
+    border: none !important;
+    background: transparent;
+    width: 44px;
+}

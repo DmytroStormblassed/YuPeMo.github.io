@@ -1,0 +1,72 @@
+@import 'pagestyle.css';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 40px;
+    gap: 30px;
+}
+
+.left {
+    width: 55%;
+    animation: slideInLeft 0.55s ease both;
+}
+
+.balance {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 18px;
+    animation: fadeInUp 0.5s 0.1s ease both;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chart-header .balance {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 15px;
+    font-family: 'Lato', serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.filters { display: flex; gap: 8px; }
+
+.graph {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s;
+}
+.graph:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.13); }
+.graph img { width: 100%; display: block; }
+
+.legend {
+    display: flex;
+    gap: 30px;
+    margin-top: 16px;
+    animation: fadeIn 0.5s 0.4s ease both;
+}
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.box { width: 18px; height: 18px; border-radius: 4px; }
+.expense { background: #d7a98c; }
+.income  { background: #a6d48c; }
+
+.right {
+    width: 37%;
+    animation: slideInRight 0.55s ease both;
+}
+.right h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.buttons { display: flex; gap: 10px; margin-bottom: 12px; }
